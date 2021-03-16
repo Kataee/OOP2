@@ -12,10 +12,11 @@ public class Main {
 
         ArrayList<Person> persons = readFromCSVFile("lab4_1_input.csv");
         for (Person person : persons) {
-            System.out.println(person);
+            System.out.println(person.getFirstName() + " " + person.getLastName() + " " + person.getBirthYear());
         }
 
         readFilePrintItsLineNumbered("lab4_1_input.txt");
+        System.out.println(persons.toString());
     }
 
 
@@ -63,11 +64,6 @@ public class Main {
                 String firstName = items[0].trim();
                 String lastName = items[1].trim();
                 int birthYear = Integer.parseInt(items[2].trim());
-                //Integer.parseInt(asd)
-
-                //Person person = new Person(firstName, lastName, birthYear);
-                //persons.add(person);
-
 
                 persons.add(new Person(firstName, lastName, birthYear));
             }

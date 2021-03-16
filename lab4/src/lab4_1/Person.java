@@ -29,6 +29,10 @@ public class Person {
         this.lastName = lastName;
     }
 
+    @Override
+    public String toString() {
+        return "Name: " + firstName + " " + lastName + ", year of birth: " + birthYear;
+    }
 
 
 }
