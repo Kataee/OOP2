@@ -10,11 +10,10 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        //readFilePrintItsLineNumbered("lab4_1_input.csv");
-
-        ArrayList<Customer> accounts = readFilePrintItsLineNumbered("lab4_2_input.txt");
-        for (Customer customer : accounts) {
-            System.out.println(accounts);
+        ArrayList<Customer> customers = readFilePrintItsLineNumbered("lab4_2_input.txt");
+        for (Customer customer : customers) {
+            System.out.println(customer.getFirstName());
+            System.out.println(customer.getLastNameName());
         }
 
 
@@ -28,31 +27,34 @@ public class Main {
         Scanner scanner = null;
         try {
             scanner = new Scanner( new File(fileName));
-            for (int i=0; scanner.hasNextLine(); ++i) {
-                if (scanner != null) {
-                    while (scanner.hasNextLine()) {
-                        String line = scanner.nextLine();
+            if (scanner != null) {
+                for (int i=0; scanner.hasNextLine(); ++i) {
+                    {
+                        while (scanner.hasNextLine()) {
+                            String line = scanner.nextLine();
 
-                        if( line.isEmpty() ){
-                            continue;
+                            if( line.isEmpty() ){
+                                continue;
+                            }
+                            String[] items = line.split(",");
+                            // trim: eliminates leading and trailing spaces
+                            String first = items[0].trim();
+                            String second = items[1].trim();
+                            String third = items[2].trim();
+
+                            if (first.equals("Customer")) {
+                                customer.add(new Customer(second, third));
+                            }
+                            if (first.equals("Account")) {
+                                BankAccount account = new BankAccount(second, Integer.parseInt(third));
+                                customer.get(customer.size()-1).addAccount(account);
+                            }
+
                         }
-                        String[] items = line.split(",");
-                        // trim: eliminates leading and trailing spaces
-                        String first = items[0].trim();
-                        String second = items[1].trim();
-                        String third = items[2].trim();
-
-                        if (first == "Customer") {
-                            customer.add(new Customer(second, third));
-                        }
-                        if (first == "Account") {
-                            BankAccount account = new BankAccount(second, Integer.parseInt(third));
-
-                        }
-
                     }
                 }
             }
+
 
 
 

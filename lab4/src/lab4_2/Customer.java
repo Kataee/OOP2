@@ -22,8 +22,7 @@ public class Customer {
     }
      //itt mit kell írni?
     public void addAccount(BankAccount account) {
-        String asd = "asd" + accounts.size();
-        accounts.add(new BankAccount(asd));
+        accounts.add(account);
     }
 
 
