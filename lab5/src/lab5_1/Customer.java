@@ -7,7 +7,6 @@ public class Customer {
     private final int id;
     private String firstName, lastName;
 
-    private BankAccount account;
     private ArrayList<BankAccount> accounts = new ArrayList<>();
 
     //private BankAccount accounts[] = new BankAccount [MAX_ACCOUNTS];
@@ -19,13 +18,20 @@ public class Customer {
         id = numCustomers;
     }
 
+    public int getId() { return id; }
 
     public int getNumAccounts() {
         return accounts.size();
     }
-    //itt mit kell írni?
+
+    //public String getAccountNumbers()
+
     public void addAccount(BankAccount account) {
         accounts.add(account);
+    }
+
+    public BankAccount getAccount(String account) {
+        ;
     }
 
 
@@ -35,6 +41,8 @@ public class Customer {
     public String getLastNameName(){
         return lastName;
     }
+
+
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
@@ -46,7 +54,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Name: " + firstName + " " + lastName + "\n\t" + account.toString();
+        return "Name: " + firstName + " " + lastName + ", client: " + id+ "\n\t" + accounts.toString();
         // return "Name: " + firstName + lastName + "\n\t" + getAccount().getAccountNumber() + getAccount().getBalance();
     }
 }

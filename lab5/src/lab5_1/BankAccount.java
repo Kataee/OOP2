@@ -13,21 +13,30 @@ public class BankAccount {
 
     public BankAccount() {
         this.accountNumber = createAccountNumber();
+        //this.balance = 0;
+        numAccounts++;
     }
 
     private String createAccountNumber() {
+        int zerosLength = ACCOUNT_NUMBER_LENGTH - PREFIX.length();
 
-        return PREFIX;
-    }
-
-
-    public String getAccountNumber() {
-        return accountNumber;
+        //for safety
+        if (zerosLength < 1) {
+            zerosLength = 1;
+        }
+        String formatted = String.format("%0" + zerosLength +"d", numAccounts);
+        return PREFIX + formatted;
     }
 
     public double getBalance() {
         return balance;
     }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+
 
     public void deposit(double value) {
         if(value > 0) {
@@ -45,7 +54,7 @@ public class BankAccount {
 
     @Override
     public String toString() {
-        return this.accountNumber + " balance: " + this.balance;
+        return "Account number: " + this.accountNumber + " balance: " + this.balance + "\n\t";
     }
 
 }
