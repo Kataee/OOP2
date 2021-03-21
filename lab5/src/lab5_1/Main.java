@@ -53,7 +53,17 @@ public class Main {
             }
         }
 
-        bank1.getCustomer(0)....
+        //bank1.getCustomer(0).getAccount().deposit(100);
+        //bank1.getCustomer(1).getAccount();
+
+        for (int i=0; i<bank1.numCustomers(); ++i) {
+            if (bank1.getCustomer(i).getId() == 2) {
+                System.out.println(bank1.getCustomer(i));
+            }
+            break;
+        }
+
+
 
 
 

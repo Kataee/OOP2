@@ -24,15 +24,34 @@ public class Customer {
         return accounts.size();
     }
 
-    //public String getAccountNumbers()
+    //nem tudom ezt
+    /*
+    public ArrayList<String> getAccountNumbers() {
+        ArrayList<String> accountNumbers = null;
+        for (BankAccount account : accounts) {
+            accountNumbers.add(account.getAccountNumber());
+        }
+        return accountNumbers;
+    }
+    */
+
 
     public void addAccount(BankAccount account) {
         accounts.add(account);
     }
 
+    //nem tudom ez mit kellene csinaljon, s hogyan
+    //like.. BankAccount type és string input
+    /*
     public BankAccount getAccount(String account) {
-        ;
+        if (getNumAccounts() > 0) {
+
+            return accounts.get(0);
+        }
+        return null;
     }
+
+     */
 
 
     public String getFirstName(){
