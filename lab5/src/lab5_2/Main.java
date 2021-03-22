@@ -23,6 +23,27 @@ public class Main {
         System.out.println();
 
 
+        Matrix m2 = new Matrix(2, 3);
+        m2.fillRandom(1,2);
+        System.out.println("m2: ");
+        m2.printMatrix();
+        System.out.println("Sum: m1 + m2");
+        //non static method add cannot be referenced from a static context
+        Matrix.add(m1, m2).printMatrix();
+
+
+/*
+        Matrix m3 = new Matrix(3, 4);
+        m3.fillRandom(0, 1);
+        System.out.println("m3: ");
+        m3.printMatrix();
+
+
+        System.out.println("Product: m1 * m3");
+        Matrix.multiply(m1, m3).printMatrix();
+
+ */
+
     }
 
 
