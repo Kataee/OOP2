@@ -50,7 +50,7 @@ public class Matrix {
     public void printMatrix() {
         for (int i=0; i<this.rows; ++i) {
             for (int j=0; j< this.columns; ++j) {
-                System.out.printf("%.1f ", this.data[i][j]);  //.1f for one decimal
+                System.out.printf("%.2f ", this.data[i][j]);  //.1f for one decimal
             }
             System.out.print("\n");
         }
@@ -82,6 +82,31 @@ public class Matrix {
             for (int j=0; j < m1.getColumns(); ++j) {
                 zxc.data[i][j] = m1.data[i][j] + m2.data[i][j];
                 //System.out.printf("%d %d\n", i, j);
+            }
+        }
+        return zxc;
+    }
+
+    public static Matrix multiply(Matrix m1, Matrix m2) {
+        Matrix zxc = new Matrix(m1.getRows(), m2.getColumns());
+        for(int i = 0; i < m1.getRows(); i++) {
+            for (int j = 0; j < m2.getColumns(); j++) {
+                for (int k = 0; k < m1.getColumns(); k++) {
+                    zxc.data[i][j] += m1.data[i][k] * m2.data[k][j];
+                }
+            }
+        }
+
+        return zxc;
+    }
+
+    public static Matrix transpose(Matrix m1) {
+        int length = m1.getRows();
+        Matrix zxc = new Matrix(m1.getRows(), m1.getColumns());
+
+        for (int i = 0; i < length; i++) {
+            for (int j = 0; j < length; j++) {
+                zxc.data[i][j] = m1.data[j][i];
             }
         }
         return zxc;

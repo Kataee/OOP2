@@ -32,8 +32,8 @@ public class Main {
         Matrix.add(m1, m2).printMatrix();
 
 
-/*
-        Matrix m3 = new Matrix(3, 4);
+
+        Matrix m3 = new Matrix(3, 3);
         m3.fillRandom(0, 1);
         System.out.println("m3: ");
         m3.printMatrix();
@@ -42,7 +42,9 @@ public class Main {
         System.out.println("Product: m1 * m3");
         Matrix.multiply(m1, m3).printMatrix();
 
- */
+        System.out.println("Transpose(m3)");
+        Matrix.transpose( m3 ).printMatrix();
+
 
     }
 
