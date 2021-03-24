@@ -25,15 +25,15 @@ public class Customer {
     }
 
     //nem tudom ezt
-    /*
+    //////////////////////////////
     public ArrayList<String> getAccountNumbers() {
-        ArrayList<String> accountNumbers = null;
+        ArrayList<String> accountNumbers = new ArrayList<>();
         for (BankAccount account : accounts) {
             accountNumbers.add(account.getAccountNumber());
         }
         return accountNumbers;
     }
-    */
+
 
 
     public void addAccount(BankAccount account) {
@@ -42,16 +42,21 @@ public class Customer {
 
     //nem tudom ez mit kellene csinaljon, s hogyan
     //like.. BankAccount type és string input
-    /*
+
     public BankAccount getAccount(String account) {
         if (getNumAccounts() > 0) {
+            for (BankAccount asd : accounts) {
+                if (asd.getAccountNumber().equals(account)) {
+                    return asd;
+                }
 
-            return accounts.get(0);
+            }
+
         }
         return null;
     }
 
-     */
+
 
 
     public String getFirstName(){
