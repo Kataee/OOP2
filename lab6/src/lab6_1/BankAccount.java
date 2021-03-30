@@ -10,7 +10,7 @@ public class BankAccount {
     protected double balance;
 
 
-    public BankAccount() {
+    protected BankAccount() {
         this.accountNumber = createAccountNumber();
         //this.balance = 0;
         numAccounts++;
