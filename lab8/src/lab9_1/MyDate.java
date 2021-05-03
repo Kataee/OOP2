@@ -38,6 +38,7 @@ public class MyDate implements Comparable<MyDate>{
     public int compareTo(MyDate o) {
         //this <-> o
 
+
         /*
         LocalDate date1 = LocalDate.of(this.year, this.month, this.day);
         LocalDate date2 = LocalDate.of(o.year, .o.month, o.day);

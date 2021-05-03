@@ -10,6 +10,7 @@ public class Employee {
     private MyDate birthDate;
     private static int counter;
 
+
     public Employee(String firstName, String lastName, double salary, MyDate birthDate) {
         this.firstName = firstName;
         this.lastName = lastName;

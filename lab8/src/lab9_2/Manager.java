@@ -14,6 +14,7 @@ public class Manager extends Employee{
         return department;
     }
 
+
     public void setDepartment(String department) {
         this.department = department;
     }
