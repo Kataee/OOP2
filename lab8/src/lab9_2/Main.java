@@ -13,8 +13,13 @@ public class Main {
 
         MyDate date1 = new MyDate(1998,05, 05);
         Employee emp1 = new Employee("Kis", "Pista", 500, date1);
+        Employee emp2 = new Employee("Kis", "Antal", 300, date1);
         System.out.println(emp1.toString());
         company1.hire(emp1);
+        company1.hire(emp2);
+
+        Manager manager1 = new Manager("Kis", "Margit", 200, date1, "lksf");
+        company1.hire(manager1);
         company1.printAll(System.out);
 
 

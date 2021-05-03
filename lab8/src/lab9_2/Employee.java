@@ -16,7 +16,7 @@ public class Employee {
         this.lastName = lastName;
         this.salary = salary;
         this.birthDate = birthDate;
-        ID = counter;
+        ID = counter++;
     }
 
     public int getID() {

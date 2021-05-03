@@ -1,9 +1,14 @@
 package lab9_2;
 
+import lab9_1.MyDate;
+
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Scanner;
 
 public class Company {
     private String name;
@@ -26,12 +31,43 @@ public class Company {
         employees.add(employee);
     }
 
-    /*
-    public void hireAll(String) {
 
+    public void hireAll(String fileName) {
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner( new File(fileName));
+            if (scanner != null) {
+                while (scanner.hasNextLine()) {
+                    String line = scanner.nextLine();
+
+                    if (line.isEmpty()) {
+                        continue;
+                    }
+                    String[] items = line.split(",");
+                    // trim: eliminates leading and trailing spaces
+                    String firstName = items[0].trim();
+                    String lastName = items[1].trim();
+                    double salary = Integer.parseInt(items[2].trim());
+                    int year = Integer.parseInt(items[3].trim());
+                    int month = Integer.parseInt(items[4].trim());
+                    int day = Integer.parseInt(items[5].trim());
+                    MyDate birthDate = new MyDate(year, month, day);
+
+                    //new manager if department
+                    if (items[6]!=null) {
+                        String department = items[6].trim();
+                        Manager manager = new Manager(firstName, lastName, salary, birthDate, department);
+
+                    }
+
+                }
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
-     */
 
     public void fire(int ID) {
         int temp =0 ;
