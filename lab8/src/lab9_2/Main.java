@@ -30,7 +30,7 @@ public class Main {
          */
 
         //read the file
-        readFilePrintItsLineNumbered("file.txt");
+        //readFilePrintItsLineNumbered("file.txt");
 
         company1.hireAll("file.txt");
         company1.printAll(System.out);
