@@ -5,10 +5,7 @@ import lab9_1.MyDate;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Scanner;
+import java.util.*;
 
 public class Company {
     private String name;
@@ -32,7 +29,7 @@ public class Company {
     }
 
 
-    public void hireAll(String fileName) {
+    public  void hireAll(String fileName) {
         Scanner scanner = null;
         try {
             scanner = new Scanner( new File(fileName));
@@ -43,22 +40,35 @@ public class Company {
                     if (line.isEmpty()) {
                         continue;
                     }
+                    //string for the entire read line
                     String[] items = line.split(",");
                     // trim: eliminates leading and trailing spaces
+                    //splitting the line into firstName, lastName, salary, birthDate and department if we have that
                     String firstName = items[0].trim();
                     String lastName = items[1].trim();
                     double salary = Integer.parseInt(items[2].trim());
+
                     int year = Integer.parseInt(items[3].trim());
                     int month = Integer.parseInt(items[4].trim());
                     int day = Integer.parseInt(items[5].trim());
                     MyDate birthDate = new MyDate(year, month, day);
 
-                    //new manager if department
-                    if (items[6]!=null) {
-                        String department = items[6].trim();
-                        Manager manager = new Manager(firstName, lastName, salary, birthDate, department);
 
+                    if (items.length < 6) {
+                        String department = items[6].trim();
+                        //creating a new manager
+                        Manager manager = new Manager(firstName, lastName, salary, birthDate, department);
+                        employees.add(manager);
+                        //continue to not add this item twice (notice the word *item* for manager)
+                        continue;
                     }
+
+                    //if we don't have a manager by checking if the
+                    //string is long enough, we create a basic employee
+                    Employee employee = new Employee(firstName, lastName, salary, birthDate);
+                    employees.add(employee);
+
+
 
                 }
             }
@@ -103,4 +113,18 @@ public class Company {
     void sortByComparator(Comparator<Employee> employeeComparator) {
         Collections.sort(employees, employeeComparator);
     }
+
+
+    //===============
+
+    public static void readFilePrintItsLineNumbered( String fileName ){
+        try (Scanner scanner = new Scanner( new File(fileName))){
+//read and process the lines
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 }
+
+
+

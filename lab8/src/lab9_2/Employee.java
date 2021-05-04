@@ -2,7 +2,7 @@ package lab9_2;
 
 import lab9_1.MyDate;
 
-public class Employee {
+public class Employee implements Comparable<Employee>{
     private final int ID;
     private String firstName;
     private String lastName;
@@ -51,6 +51,13 @@ public class Employee {
     public String toString() {
         //System.out.println("Customer ID: " + ID + ", name: " + firstName + " " + lastName + ", salary: " + salary + ", birth: " + birthDate +"\n");
         return "Customer ID: " + ID + ", name: " + firstName + " " + lastName + ", salary: " + salary + ", birth: " + birthDate +"\n";
+    }
+
+    @Override
+    public int compareTo(Employee o) {
+        String compareString = ((Employee) o).getFirstName();
+
+        return this.getFirstName().compareTo(o.getFirstName());
     }
 }
 
