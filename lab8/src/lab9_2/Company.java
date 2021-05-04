@@ -114,16 +114,6 @@ public class Company {
         Collections.sort(employees, employeeComparator);
     }
 
-
-    //===============
-
-    public static void readFilePrintItsLineNumbered( String fileName ){
-        try (Scanner scanner = new Scanner( new File(fileName))){
-//read and process the lines
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
 }
 
 
