@@ -49,3 +49,4 @@ public class TakeSomeFromArray extends Thread {
         return -1;
     }
 }
+

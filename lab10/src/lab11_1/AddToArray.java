@@ -88,3 +88,4 @@ public class AddToArray extends Thread {
         return minPoz;
     }
 }
+
