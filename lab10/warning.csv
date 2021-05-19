@@ -1,6 +1,0 @@
-Input line: ABCXYZ, John, Black
-Error message: INCOMPLETE LINE: ABCXYZ, John, Black
-Input line: A1B1C1, John, White, 3.5, 2000, 4, 23
-Error message: NUMBER FORMAT EXCEPTION: A1B1C1, John, White, 3.5, 2000, 4, 23
-Input line: A1B1C1, Rebecca, White, 55, 2000, 2, 30
-Error message: INVALID DATE: A1B1C1, Rebecca, White, 55, 2000, 2, 30
