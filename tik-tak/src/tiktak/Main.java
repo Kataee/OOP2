@@ -49,13 +49,16 @@ public class Main extends Application {
 
         //add 3x3 elements
         add3x3Buttons(gridPane);
+        //button.setText
 
 
         //add new element to scene
     }
 
     public void create3x3Buttons() {
+
         btn00 = new Button();
+        btn00.setId("btn");
         btn10 = new Button();
         btn20 = new Button();
         btn01 = new Button();
@@ -64,6 +67,8 @@ public class Main extends Application {
         btn02 = new Button();
         btn12 = new Button();
         btn22 = new Button();
+
+
     }
 
     public void add3x3Buttons(GridPane gridPane) {
